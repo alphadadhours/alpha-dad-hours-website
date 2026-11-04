@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alpha Dad Hours</title>
+<meta name="description" content="Alpha Dad Hours: the time a dad makes to take care of himself, so he can show up for the people who need him.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#07090C; --panel:#0D1116; --panel2:#11161C; --line:#1C232C;
+  --white:#EEF2F6; --muted:#A3ADB8; --steel:#5E6873; --blue:#1E90FF;
+  --wide:'Archivo',Inter,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.wide{font-family:var(--wide);font-stretch:125%;text-transform:uppercase}
+.kicker{font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:12px;letter-spacing:.32em;color:var(--blue);text-transform:uppercase}
+h1,h2,h3{font-family:var(--wide);font-stretch:125%;font-weight:900;text-transform:uppercase;line-height:.98;letter-spacing:.01em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* logo */
+.logo{display:inline-flex;flex-direction:column;align-items:center;border:3px solid var(--white);padding:9px 13px 8px;text-decoration:none}
+.logo .t{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:15px;letter-spacing:.07em;line-height:1;color:var(--white)}
+.logo .r{display:flex;align-items:center;gap:7px;width:100%;margin-top:5px}
+.logo .r i{flex:1;height:2px;background:var(--steel)}
+.logo .r b{font-family:var(--wide);font-stretch:125%;font-weight:600;font-size:7px;letter-spacing:.5em;margin-right:-.5em;color:var(--blue)}
+.logo.lg{border-width:4px;padding:22px 30px 20px}
+.logo.lg .t{font-size:40px}
+.logo.lg .r{gap:12px;margin-top:12px}
+.logo.lg .r i{height:3px}
+.logo.lg .r b{font-size:13px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(7,9,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+nav{display:flex;align-items:center;gap:30px}
+nav a{font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--white)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;background:var(--blue);color:var(--black);border:0;font-family:var(--wide);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:#4AA6FF}
+.btn.ghost{background:transparent;color:var(--white);border:2px solid var(--white)}
+.btn.ghost:hover{background:var(--white);color:var(--black)}
+nav .btn{height:42px;padding:0 18px;font-size:11px;color:var(--black)}
+.menu{display:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:110px;padding-bottom:110px;position:relative}
+.hero .ghostword{position:absolute;right:-40px;bottom:-60px;font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:300px;line-height:.8;color:#0C1015;pointer-events:none;user-select:none;letter-spacing:-.02em}
+.hero h1{font-size:clamp(46px,7.6vw,104px);margin:22px 0 0;max-width:12ch}
+.hero h1 span{color:var(--blue)}
+.bar{width:110px;height:7px;background:var(--blue);margin:34px 0 28px}
+.hero p.lead{font-size:20px;color:var(--muted);max-width:560px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+
+/* statement band */
+.band{background:var(--blue);color:var(--black)}
+.band .wrap{padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+.band .big{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:clamp(30px,4vw,52px);line-height:1;text-transform:uppercase}
+.band p{font-size:19px;font-weight:500;max-width:620px}
+
+/* sections */
+section.s{padding:110px 0;border-bottom:1px solid var(--line)}
+.s h2{font-size:clamp(34px,4.6vw,60px);margin-top:16px}
+.s .intro{color:var(--muted);font-size:19px;max-width:620px;margin-top:22px}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px;border:1px solid var(--line)}
+.pillar{padding:40px 34px 44px;border-right:1px solid var(--line)}
+.pillar:last-child{border-right:0}
+.pillar .n{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:15px;color:var(--blue);letter-spacing:.1em}
+.pillar h3{font-size:26px;margin:18px 0 14px}
+.pillar p{color:var(--muted);font-size:16px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+.photo{aspect-ratio:4/5;background:var(--panel2);border:1px solid var(--line);position:relative;display:flex;align-items:flex-end;padding:22px}
+.photo{overflow:hidden;padding:0}.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 35%;filter:saturate(.9)}.photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -120px 120px -60px rgba(7,9,12,.7);pointer-events:none}.photo .tag{z-index:2}
+.photo span{position:relative;font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:11px;letter-spacing:.24em;color:var(--steel);text-transform:uppercase}
+.photo .tag{position:absolute;top:0;left:0;background:var(--blue);color:var(--black);font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:12px;letter-spacing:.18em;padding:9px 14px}
+.about p{color:var(--muted);margin-top:18px;font-size:18px}
+.about p strong{color:var(--white);font-weight:600}
+.sig{margin-top:30px;font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:20px;letter-spacing:.06em;text-transform:uppercase}
+.sig small{display:block;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--blue);margin-top:6px}
+
+.pwrap{position:relative;padding:0 26px 26px 0}
+.pwrap::before{content:"";position:absolute;left:26px;top:26px;right:0;bottom:0;background:var(--blue);clip-path:polygon(0 0,86% 0,100% 9%,100% 100%,14% 100%,0 91%)}
+.pwrap .photo{clip-path:polygon(0 0,86% 0,100% 9%,100% 100%,14% 100%,0 91%);border:0;aspect-ratio:4/5.2}
+.vtext{position:absolute;left:-78px;top:0;bottom:26px;writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:64px;letter-spacing:.06em;color:transparent;-webkit-text-stroke:1.5px #26303B;white-space:nowrap;z-index:0;pointer-events:none}
+.photo .cap{position:absolute;left:14%;right:0;bottom:0;z-index:2;padding:22px 26px;font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:.04em;line-height:1}
+.photo .cap span{color:var(--blue);font-size:inherit;letter-spacing:inherit;font-weight:inherit}
+.about{position:relative}
+/* email */
+.email{background:var(--panel)}
+.email .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:start}
+.list{list-style:none;margin-top:34px;border-top:1px solid var(--line)}
+.list li{display:grid;grid-template-columns:54px 1fr;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--muted)}
+.list li b{font-family:var(--wide);font-stretch:125%;font-weight:900;color:var(--blue);font-size:14px;letter-spacing:.1em;padding-top:3px}
+.list li strong{color:var(--white);font-weight:600}
+.card{background:var(--black);border:1px solid var(--line);border-top:6px solid var(--blue);padding:40px 36px}
+.card h3{font-size:30px}
+.card p{color:var(--muted);margin:12px 0 26px;font-size:16px}
+label.f{display:block;font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+input,textarea,select{width:100%;background:var(--panel2);border:1px solid #26303B;color:var(--white);font:inherit;font-size:16px;padding:14px 16px;border-radius:0;outline:none}
+input:focus,textarea:focus{border-color:var(--blue)}
+textarea{min-height:120px;resize:vertical}
+.field{margin-bottom:18px}
+.card .btn{width:100%;margin-top:6px}
+.fine{font-size:13px;color:var(--steel);margin-top:14px}
+.msg{display:none;margin-top:16px;padding:14px 16px;border:1px solid var(--blue);color:var(--white);font-size:15px}
+.msg.show{display:block}
+.err{color:#FF6B6B;font-size:13px;margin-top:6px;display:none}
+.err.show{display:block}
+
+/* brands */
+.offer{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.o{background:var(--panel);border:1px solid var(--line);padding:30px 26px 32px}
+.o .n{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:13px;color:var(--blue);letter-spacing:.12em}
+.o h3{font-size:19px;margin:16px 0 10px;line-height:1.1}
+.o p{color:var(--muted);font-size:15px}
+.partners{margin-top:64px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.partners .kicker{color:var(--steel)}
+.partners .p{font-family:var(--wide);font-stretch:110%;font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--white)}
+.brandform{display:grid;grid-template-columns:1fr 1.2fr;gap:70px;margin-top:80px;align-items:start}
+.brandform .why p{color:var(--muted);margin-top:16px;font-size:17px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* gear */
+.gear{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px}
+.g{background:var(--panel);border:1px solid var(--line);padding:34px 30px;display:flex;flex-direction:column;min-height:250px}
+.g .k{font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:10px;letter-spacing:.26em;color:var(--blue);text-transform:uppercase}
+.g h3{font-size:24px;margin:14px 0 10px}
+.g p{color:var(--muted);font-size:15px;flex:1}
+.g a{margin-top:22px;font-family:var(--wide);font-stretch:125%;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--white);border-bottom:2px solid var(--blue);align-self:flex-start;padding-bottom:4px}
+.g.soon{background:transparent;border-style:dashed}
+.g.soon h3{color:var(--steel)}
+
+/* life */
+.life{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:12px;margin-top:56px}
+.lt{position:relative;overflow:hidden;background:var(--panel2);border:1px solid var(--line);margin:0}
+.lt.big{grid-column:span 2;grid-row:span 2}
+.lt.wide{grid-column:span 2}
+.lt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 30%}
+.lt.ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 22px,#0F141A 22px 23px)}
+.lt.ph::after{content:"Photo coming";position:absolute;top:16px;right:16px;font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--steel)}
+.lt figcaption{position:absolute;left:0;bottom:0;right:0;padding:70px 20px 18px;background:linear-gradient(transparent,rgba(7,9,12,.6) 40%,rgba(7,9,12,.95));font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:18px;text-transform:uppercase;letter-spacing:.03em;line-height:1.1}
+.lt figcaption b{display:block;font-weight:700;font-size:10px;letter-spacing:.28em;color:var(--blue);margin-bottom:6px}
+.fits{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:30px}
+.fits .kicker{margin-right:6px}
+.fits i{font-style:normal;font-size:13px;font-weight:600;padding:8px 14px;border:1px solid #26303B;color:var(--white)}
+.kit{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px}
+.kc h3{font-size:22px;padding-bottom:14px;margin-bottom:14px;border-bottom:3px solid var(--blue)}
+.kc .g{min-height:0;margin-bottom:12px;padding:26px 24px}
+.g h4{font-family:var(--wide);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:20px;margin:12px 0 8px;line-height:1.05}
+.g.soon h4{color:var(--steel)}
+@media (max-width:980px){.life{grid-template-columns:1fr 1fr;grid-auto-rows:190px}.kit{grid-template-columns:1fr}}
+@media (max-width:560px){.life{grid-auto-rows:150px}.lt.big{grid-row:span 2}}
+/* footer */
+footer{padding:80px 0 50px}
+footer .top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+footer .links{display:flex;gap:28px;flex-wrap:wrap}
+footer .links a{font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+footer .links a:hover{color:var(--white)}
+footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--steel);font-size:13px;flex-wrap:wrap;gap:10px}
+
+@media (max-width:980px){
+  nav a:not(.btn){display:none}
+  .band .wrap,.about,.email .grid,.brandform{grid-template-columns:1fr;gap:40px}
+  .pillars{grid-template-columns:1fr}
+  .pillar{border-right:0;border-bottom:1px solid var(--line)}
+  .pillar:last-child{border-bottom:0}
+  .offer{grid-template-columns:1fr 1fr}
+  .gear{grid-template-columns:1fr}
+  .pwrap .photo{aspect-ratio:4/4.6}.vtext{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .hero .wrap{padding-top:70px;padding-bottom:80px}
+  section.s{padding:80px 0}
+  .offer,.two{grid-template-columns:1fr}
+  .logo .t{font-size:13px}
+  .logo.lg .t{font-size:26px}
+  .logo.lg{padding:16px 20px 14px}
+  .hero .ghostword{font-size:180px}
+  .card{padding:30px 22px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Alpha Dad Hours home"><span class="t">ALPHA DAD</span><span class="r"><i></i><b>HOURS</b><i></i></span></a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#email">The email</a>
+      <a href="#brands">Work with me</a>
+      <a href="#life">Life</a>
+      <a href="#gear">The kit</a>
+      <a class="btn" href="#email">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="ghostword" aria-hidden="true">ADH</div>
+  <div class="wrap">
+    <div class="kicker">Fitness · Lifestyle · Fatherhood</div>
+    <h1>Train hard. Live well. <span>Show up.</span></h1>
+    <div class="bar"></div>
+    <p class="lead">Alpha Dad Hours is the time a dad makes for himself, in the gym and out of it. Not because he has extra time. Because the people counting on him deserve him at his best.</p>
+    <div class="ctas">
+      <a class="btn" href="#email">Get the weekly email</a>
+      <a class="btn ghost" href="https://www.instagram.com/alphadadhours/" target="_blank" rel="noopener">Follow @alphadadhours</a>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div class="big">Mine's 4 AM.</div>
+    <p>Yours might be your lunch break, after the kids are down, or a Saturday before everybody's up. It doesn't matter when. It matters that you make it, and that you stop saying you don't have time.</p>
+  </div>
+</div>
+
+<section class="s">
+  <div class="wrap">
+    <div class="kicker">What this is</div>
+    <h2>Built for the whole life.</h2>
+    <div class="pillars">
+      <div class="pillar"><div class="n">01</div><h3>Train</h3><p>Find your hour and protect it. Lift, run, sweat. Consistency beats perfect every single time, and "I don't have time" is an excuse.</p></div>
+      <div class="pillar"><div class="n">02</div><h3>Live</h3><p>Life outside the gym counts too. The outdoors, the gear you trust, how you carry yourself. Take care of the whole man.</p></div>
+      <div class="pillar"><div class="n">03</div><h3>Show up</h3><p>The point was never the workout. It's being the husband and dad your family deserves when the hour's over.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="about">
+  <div class="wrap about">
+    <div class="pwrap">
+      <div class="vtext" aria-hidden="true">ALPHA DAD</div>
+      <div class="photo">
+        <img src="judson.jpg" alt="Judson training in his home gym">
+        <div class="tag">THE DAD</div>
+        <div class="cap"><span>Real dad.</span> Real hours.</div>
+      </div>
+    </div>
+    <div>
+      <div class="kicker">About</div>
+      <h2>I'm not a trainer. I'm a dad who made the time.</h2>
+      <p>I'm Judson: husband, dad to two boys, and a guy with a full plate like everybody else. A little over a year ago I started getting up before the house did, because it was the only hour that was mine.</p>
+      <p>I started posting about it half as a joke. Then other dads started saying the same thing: <strong>"I don't have time."</strong> I get it. But if I can make it work, so can you.</p>
+      <p>This isn't about being an expert. It's about proving it can be done, and bringing a few more dads along with me.</p>
+      <div class="sig">Judson Sullivan<small>Founder, Alpha Dad Hours</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="life">
+  <div class="wrap">
+    <div class="kicker">The life</div>
+    <h2>In the gym. And out of it.</h2>
+    <p class="intro">Training is where it starts. The rest is what it's for.</p>
+    <div class="life">
+      <figure class="lt big"><img src="judson.jpg" alt="Judson training in his home gym"><figcaption><b>Train</b>Home gym</figcaption></figure>
+      <figure class="lt"><img src="orchard.jpg" alt="Judson and his wife outdoors on a sunny day" style="object-position:50% 25%"><figcaption><b>Live</b>Saturdays outside</figcaption></figure>
+      <figure class="lt"><img src="opry.jpg" alt="Judson and his wife on a night out in Nashville" style="object-position:50% 45%"><figcaption><b>Live</b>Date night</figcaption></figure>
+      <figure class="lt wide"><img src="walk.jpg" alt="Judson walking to a game with his two boys" style="object-position:50% 40%"><figcaption><b>Show up</b>Game day with the boys</figcaption></figure>
+      <figure class="lt wide"><img src="fence.jpg" alt="Judson with his wife and two boys" style="object-position:50% 42%"><figcaption><b>Show up</b>The whole crew</figcaption></figure>
+      <figure class="lt"><img src="coffee.jpg" alt="Coffee on the gym floor next to a barbell" style="object-position:30% 55%"><figcaption><b>Live</b>Coffee first</figcaption></figure>
+      <figure class="lt"><img src="together.jpg" alt="Judson and his wife flexing in their home gym" style="object-position:50% 22%"><figcaption><b>Train</b>With my wife</figcaption></figure>
+    </div>
+    <div class="ctas" style="margin-top:36px"><a class="btn ghost" href="https://www.instagram.com/alphadadhours/" target="_blank" rel="noopener">More on Instagram</a></div>
+  </div>
+</section>
+
+<section class="s email" id="email">
+  <div class="wrap grid">
+    <div>
+      <div class="kicker">The weekly email</div>
+      <h2>Made Time</h2>
+      <p class="intro">One short email a week for dads who want to get right without losing the family time that matters. Quick to read, built to get you moving.</p>
+      <ul class="list">
+        <li><b>01</b><span><strong>The training.</strong> What I did this week and what's actually working.</span></li>
+        <li><b>02</b><span><strong>The dad side.</strong> The real stuff: the wins, the misses, what my wife and boys keep teaching me.</span></li>
+        <li><b>03</b><span><strong>One thing worth it.</strong> A habit, a piece of gear, or an idea I'd hand to a buddy.</span></li>
+        <li><b>04</b><span><strong>The push.</strong> Your reminder to go make your hour happen.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Get it weekly</h3>
+      <p>Free. One email a week. Unsubscribe whenever.</p>
+      <form name="made-time" method="POST" data-netlify="true" netlify-honeypot="company-url" id="emailForm" novalidate>
+        <input type="hidden" name="form-name" value="made-time">
+        <p class="sr"><label>Leave blank <input name="company-url"></label></p>
+        <div class="field"><label class="f" for="e-name">First name</label><input id="e-name" name="name" autocomplete="given-name" placeholder="Mike"></div>
+        <div class="field"><label class="f" for="e-email">Email</label><input id="e-email" name="email" type="email" autocomplete="email" placeholder="mike@email.com"><div class="err" id="e-err">Enter a valid email.</div></div>
+        <button class="btn" type="submit">I'm in</button>
+        <div class="msg" id="e-msg"></div>
+      </form>
+      <p class="fine">No spam. Just the email.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="brands">
+  <div class="wrap">
+    <div class="kicker">Work with me</div>
+    <h2>Brands built for dads who show up.</h2>
+    <p class="intro">I partner with brands that fit how real dads train, live, and take care of their families. Honest content, in the gym and out of it, made by someone your customers actually relate to.</p>
+    <div class="fits"><span class="kicker" style="color:var(--steel)">A fit for</span><i>Fitness and supplements</i><i>Apparel</i><i>Eyewear</i><i>Bags and gear</i><i>Grooming</i><i>Outdoor</i><i>Coffee and drinks</i></div>
+    <div class="offer">
+      <div class="o"><div class="n">01</div><h3>UGC video</h3><p>Real, authentic content you can run on your own channels and in ads.</p></div>
+      <div class="o"><div class="n">02</div><h3>Sponsored Reels and Stories</h3><p>Your product in my real life, from the gym to the weekend, posted to @alphadadhours.</p></div>
+      <div class="o"><div class="n">03</div><h3>Email features</h3><p>A spot in Made Time, the weekly email, for a highly engaged list.</p></div>
+      <div class="o"><div class="n">04</div><h3>Ongoing partnerships</h3><p>Long-term ambassador deals for brands I'd use anyway.</p></div>
+    </div>
+    <div class="partners">
+      <div class="kicker">Partnered with</div>
+      <div class="p">Oak &amp; Weston</div>
+    </div>
+
+    <div class="brandform">
+      <div class="why">
+        <h3 style="font-size:30px">Let's talk.</h3>
+        <p>Tell me about your brand and what you have in mind. I'll get back to you with ideas and my media kit.</p>
+        <p>I only work with brands I'd actually use. If it's a fit, we'll make something good.</p>
+      </div>
+      <div class="card">
+        <form name="brand-inquiry" method="POST" data-netlify="true" netlify-honeypot="company-url" id="brandForm" novalidate>
+          <input type="hidden" name="form-name" value="brand-inquiry">
+          <p class="sr"><label>Leave blank <input name="company-url"></label></p>
+          <div class="two">
+            <div class="field"><label class="f" for="b-name">Your name</label><input id="b-name" name="name" autocomplete="name"></div>
+            <div class="field"><label class="f" for="b-brand">Brand</label><input id="b-brand" name="brand"></div>
+          </div>
+          <div class="field"><label class="f" for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email"><div class="err" id="b-err">Enter a valid email.</div></div>
+          <div class="field"><label class="f" for="b-msg">What do you have in mind?</label><textarea id="b-msg" name="message" placeholder="Product, timeline, type of content..."></textarea></div>
+          <button class="btn" type="submit">Send it</button>
+          <div class="msg" id="b-msgbox"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="gear">
+  <div class="wrap">
+    <div class="kicker">The kit</div>
+    <h2>What I actually use.</h2>
+    <p class="intro">No fluff. If it's on this list, it's part of my life.</p>
+    <div class="kit">
+      <div class="kc"><h3>Train</h3>
+        <div class="g"><div class="k">What I use</div><h4>Apex Wellness</h4><p>Part of how I take care of myself. Sign up through my link.</p><a href="#" data-placeholder>Check out Apex</a></div>
+        <div class="g soon"><div class="k">Coming soon</div><h4>Gym gear</h4><p>The setup I train with.</p></div>
+      </div>
+      <div class="kc"><h3>Everyday</h3>
+        <div class="g"><div class="k">Partner</div><h4>Oak &amp; Weston</h4><p>A brand I'm proud to work with and use myself.</p><a href="#" data-placeholder>Shop Oak &amp; Weston</a></div>
+        <div class="g soon"><div class="k">Coming soon</div><h4>Daily carry</h4><p>What goes with me everywhere.</p></div>
+      </div>
+      <div class="kc"><h3>Outdoors</h3>
+        <div class="g soon"><div class="k">Coming soon</div><h4>Eyewear</h4><p>What I wear when I'm outside.</p></div>
+        <div class="g soon"><div class="k">Coming soon</div><h4>Bags</h4><p>What I haul it all in.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <a class="logo lg" href="#top" aria-label="Alpha Dad Hours"><span class="t">ALPHA DAD</span><span class="r"><i></i><b>HOURS</b><i></i></span></a>
+      <div class="links">
+        <a href="#email">The email</a>
+        <a href="#brands">Work with me</a>
+        <a href="#gear">The kit</a>
+        <a href="https://www.instagram.com/alphadadhours/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 Alpha Dad Hours</span><span>alphadadhours.com</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var live = /alphadadhours\.com$|netlify\.app$/.test(location.hostname);
+  function valid(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());}
+  function wire(formId, emailId, errId, msgId, okText){
+    var f=document.getElementById(formId), e=document.getElementById(emailId),
+        err=document.getElementById(errId), msg=document.getElementById(msgId);
+    e.addEventListener('input',function(){err.classList.remove('show');});
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(!valid(e.value)){err.classList.add('show');e.focus();return;}
+      if(!live){msg.textContent='Preview only. This form starts working once the site is live on Netlify.';msg.classList.add('show');return;}
+      var body=new URLSearchParams(new FormData(f)).toString();
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+        .then(function(r){if(!r.ok)throw 0;msg.textContent=okText;msg.classList.add('show');f.reset();})
+        .catch(function(){msg.textContent="That didn't go through. Try again in a minute.";msg.classList.add('show');});
+    });
+  }
+  wire('emailForm','e-email','e-err','e-msg',"You're in. Watch your inbox.");
+  wire('brandForm','b-email','b-err','b-msgbox',"Got it. I'll be in touch soon.");
+  document.querySelectorAll('[data-placeholder]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();});});
+})();
+</script>
+</body>
+</html>
