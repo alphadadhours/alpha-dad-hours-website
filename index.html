@@ -160,11 +160,13 @@ textarea{min-height:120px;resize:vertical}
 .g.soon h4{color:var(--steel)}
 @media (max-width:980px){.life{grid-template-columns:1fr 1fr;grid-auto-rows:190px}.kit{grid-template-columns:1fr}}
 @media (max-width:560px){.life{grid-auto-rows:150px}.lt.big{grid-row:span 2}}
+.direct{margin-top:26px!important}.direct a{font-family:var(--wide);font-stretch:110%;font-weight:800;color:var(--white);text-decoration:none;border-bottom:2px solid var(--blue);padding-bottom:3px;display:inline-block;margin-top:8px}
+footer .links a[href^="mailto"]{text-transform:none;letter-spacing:.04em}
 /* footer */
 footer{padding:80px 0 50px}
 footer .top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
 footer .links{display:flex;gap:28px;flex-wrap:wrap}
-footer .links a{font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+footer .links a{text-transform:uppercase;font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
 footer .links a:hover{color:var(--white)}
 footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--steel);font-size:13px;flex-wrap:wrap;gap:10px}
 
@@ -201,7 +203,6 @@ footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)
       <a href="#email">The email</a>
       <a href="#brands">Work with me</a>
       <a href="#life">Life</a>
-      <a href="#gear">The kit</a>
       <a class="btn" href="#email">Join</a>
     </nav>
   </div>
@@ -285,7 +286,7 @@ footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)
   <div class="wrap grid">
     <div>
       <div class="kicker">The weekly email</div>
-      <h2>Made Time</h2>
+      <h2>Before They Wake</h2>
       <p class="intro">One short email a week for dads who want to get right without losing the family time that matters. Quick to read, built to get you moving.</p>
       <ul class="list">
         <li><b>01</b><span><strong>The training.</strong> What I did this week and what's actually working.</span></li>
@@ -297,8 +298,8 @@ footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)
     <div class="card">
       <h3>Get it weekly</h3>
       <p>Free. One email a week. Unsubscribe whenever.</p>
-      <form name="made-time" method="POST" data-netlify="true" netlify-honeypot="company-url" id="emailForm" novalidate>
-        <input type="hidden" name="form-name" value="made-time">
+      <form name="before-they-wake" method="POST" data-netlify="true" netlify-honeypot="company-url" id="emailForm" novalidate>
+        <input type="hidden" name="form-name" value="before-they-wake">
         <p class="sr"><label>Leave blank <input name="company-url"></label></p>
         <div class="field"><label class="f" for="e-name">First name</label><input id="e-name" name="name" autocomplete="given-name" placeholder="Mike"></div>
         <div class="field"><label class="f" for="e-email">Email</label><input id="e-email" name="email" type="email" autocomplete="email" placeholder="mike@email.com"><div class="err" id="e-err">Enter a valid email.</div></div>
@@ -319,12 +320,9 @@ footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)
     <div class="offer">
       <div class="o"><div class="n">01</div><h3>UGC video</h3><p>Real, authentic content you can run on your own channels and in ads.</p></div>
       <div class="o"><div class="n">02</div><h3>Sponsored Reels and Stories</h3><p>Your product in my real life, from the gym to the weekend, posted to @alphadadhours.</p></div>
-      <div class="o"><div class="n">03</div><h3>Email features</h3><p>A spot in Made Time, the weekly email, for a highly engaged list.</p></div>
+      <div class="o"><div class="n">03</div><h3>Email features</h3><p>A spot in Before They Wake, the weekly email, for a highly engaged list.</p></div>
       <div class="o"><div class="n">04</div><h3>Ongoing partnerships</h3><p>Long-term ambassador deals for brands I'd use anyway.</p></div>
     </div>
-    <div class="partners">
-      <div class="kicker">Partnered with</div>
-      <div class="p">Oak &amp; Weston</div>
     </div>
 
     <div class="brandform">
@@ -332,6 +330,7 @@ footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)
         <h3 style="font-size:30px">Let's talk.</h3>
         <p>Tell me about your brand and what you have in mind. I'll get back to you with ideas and my media kit.</p>
         <p>I only work with brands I'd actually use. If it's a fit, we'll make something good.</p>
+        <p class="direct">Or email me directly:<br><a href="mailto:alphadadhours@gmail.com">alphadadhours@gmail.com</a></p>
       </div>
       <div class="card">
         <form name="brand-inquiry" method="POST" data-netlify="true" netlify-honeypot="company-url" id="brandForm" novalidate>
@@ -351,28 +350,6 @@ footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)
   </div>
 </section>
 
-<section class="s" id="gear">
-  <div class="wrap">
-    <div class="kicker">The kit</div>
-    <h2>What I actually use.</h2>
-    <p class="intro">No fluff. If it's on this list, it's part of my life.</p>
-    <div class="kit">
-      <div class="kc"><h3>Train</h3>
-        <div class="g"><div class="k">What I use</div><h4>Apex Wellness</h4><p>Part of how I take care of myself. Sign up through my link.</p><a href="#" data-placeholder>Check out Apex</a></div>
-        <div class="g soon"><div class="k">Coming soon</div><h4>Gym gear</h4><p>The setup I train with.</p></div>
-      </div>
-      <div class="kc"><h3>Everyday</h3>
-        <div class="g"><div class="k">Partner</div><h4>Oak &amp; Weston</h4><p>A brand I'm proud to work with and use myself.</p><a href="#" data-placeholder>Shop Oak &amp; Weston</a></div>
-        <div class="g soon"><div class="k">Coming soon</div><h4>Daily carry</h4><p>What goes with me everywhere.</p></div>
-      </div>
-      <div class="kc"><h3>Outdoors</h3>
-        <div class="g soon"><div class="k">Coming soon</div><h4>Eyewear</h4><p>What I wear when I'm outside.</p></div>
-        <div class="g soon"><div class="k">Coming soon</div><h4>Bags</h4><p>What I haul it all in.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <footer>
@@ -382,8 +359,8 @@ footer .bottom{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)
       <div class="links">
         <a href="#email">The email</a>
         <a href="#brands">Work with me</a>
-        <a href="#gear">The kit</a>
-        <a href="https://www.instagram.com/alphadadhours/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.instagram.com/alphadadhours/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:alphadadhours@gmail.com">alphadadhours@gmail.com</a>
       </div>
     </div>
     <div class="bottom"><span>© 2026 Alpha Dad Hours</span><span>alphadadhours.com</span></div>
